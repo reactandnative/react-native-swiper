@@ -1,81 +1,41 @@
+<p align="center">
+  <img alt="react-native-swiper" src="http://i.imgur.com/P4cRUgD.png" width="208">
+</p>
+
+<p align="center">
+  The best Swiper component for React Native.
+</p>
+
+<p align="center">
+  <a href="http://standardjs.com/"><img alt="JavaScript Style Guide" src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square"></a>
+  <a href="https://npmjs.org/package/react-native-swiper"><img alt="npm version" src="http://img.shields.io/npm/v/react-native-swiper.svg?style=flat-square"></a>
+  <a href="https://npmjs.org/package/react-native-swiper"><img alt="npm version" src="http://img.shields.io/npm/dm/react-native-swiper.svg?style=flat-square"></a>
+  <a href="https://github.com/leecade/react-native-swiper/pulls?q=is%3Apr+is%3Aclosed"><img alt="PR Stats" src="https://img.shields.io/issuestats/i/github/leecade/react-native-swiper.svg?style=flat-square"></a>
+  <a href="https://github.com/leecade/react-native-swiper/issues?q=is%3Aissue+is%3Aclosed"><img alt="Issue Stats" src="https://img.shields.io/issuestats/p/github/leecade/react-native-swiper.svg?style=flat-square"></a>
+  <a href="https://gitter.im/leecade/react-native-swiper?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"><img alt="Join the chat" src="https://badges.gitter.im/leecade/react-native-swiper.svg"></a>
+</p>
+
 # react-native-swiper
-
-[![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
-[![npm version](http://img.shields.io/npm/v/react-native-swiper.svg?style=flat-square)](https://npmjs.org/package/react-native-swiper "View this project on npm")
-[![npm version](http://img.shields.io/npm/dm/react-native-swiper.svg?style=flat-square)](https://npmjs.org/package/react-native-swiper "View this project on npm")
-[![Issue Stats](https://img.shields.io/issuestats/i/github/leecade/react-native-swiper.svg?style=flat-square)](https://github.com/leecade/react-native-swiper/pulls?q=is%3Apr+is%3Aclosed)
-[![Issue Stats](https://img.shields.io/issuestats/p/github/leecade/react-native-swiper.svg?style=flat-square)](https://github.com/leecade/react-native-swiper/issues?q=is%3Aissue+is%3Aclosed)
-[![Join the chat at https://gitter.im/leecade/react-native-swiper](https://badges.gitter.im/leecade/react-native-swiper.svg)](https://gitter.im/leecade/react-native-swiper?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-![logo](http://i.imgur.com/P4cRUgD.png)
-
-The best Swiper component for React Native.
 
 ## Roadmap
 
-### V2
-
-- [ ] Improve performance
-
-- [ ] Landscape mode
-
-> Please track in [milestones:v2](https://github.com/leecade/react-native-swiper/milestones/v2)
-
-> Contribute code to [branch:Android](https://github.com/leecade/react-native-swiper/tree/android) and [branch:V2](https://github.com/leecade/react-native-swiper/tree/v2)
-
-> Provide creative in [issues](https://github.com/leecade/react-native-swiper/issues)
-
------
-
-### V1
-
-- [x] **Support for Android**
-
-- [ ] More switch effects
-
-- [ ] Unit tests
-
-- [ ] Check typo
-
-- [ ] Fix bugs
-
-- [x] Improve performance
-
-- [x] Infinite loop
-
-- [x] Direction control
-
-- [x] Complete custom style
-
-- [x] Allow title display & custom
-
-- [x] Multiple instances
-
-- [x] Custom container size
-
-- [x] Control buttons
-
-- [x] Autoplay
-
-- [x] Custom pagination style
-
-- [x] State inject
+> see: [ROADMAP.md](ROADMAP.md)
 
 ## Changelogs
 
-- **[1.5.1]**
-  + Allow scroll without animate, ref: [scrollBy(index, animated)](#scrollbyindex-animated)
-  + Remove [#254](https://github.com/leecade/react-native-swiper/pull/254) which break the scroll direction in loop mode
+- **[1.5.4]**
+  + Added easily accessible pagination point manipulation: use `dotColor` / `activeDotColor` and `dotStyle` / `activeDotStyle` (thanks [@denizs](https://github.com/denizs))
+  + Added scrollEnabled prop to documentation (thanks [@ibandominguez](https://github.com/ibandominguez))
 
-- [1.5.0]
-  + Improve develop [workflow](#development) for support watch & use real pkg name in examples
-  + Update examples for support `React-native 0.33` + `Xcode8` + `ios10` + `iphone7`
-  + Switch to [standard](https://github.com/feross/standard) code style
-  + Rewrite source code with ES6 syntex
-  + Cancel transform the source code when publish
-  + Add a [demo](examples/components/LoadMinimal) for `loadMinimal` + `lazyload`
-  + Add a [demo](examples/components/PhotoView) for multi-images viewer
-  + [#254](https://github.com/leecade/react-native-swiper/pull/254) Fix jitter when quickly swiping back and forth between pages (iOS) (@thanks [@nemophrost](https://github.com/nemophrost)).
+- [1.5.3]
+  + Add loadMinimalLoader prop to customize `<ActivityIndicator />` (thanks [@Exilz](https://github.com/Exilz))
+  + Disable autoplay timer when prop changes to false (thanks [@dizlexik](https://github.com/dizlexik))
+  + Special thanks to [@hypatiah](https://github.com/dizlexik) for fixed some grammatical errors in README
+
+- [1.5.2]
+  + Add yarn lock
+  + Fix jitter when quickly swiping back and forth between pages (iOS) (thanks [@nemophrost](https://github.com/nemophrost))
+  + The first webview always reloaded when injecting the rest of the children (thanks [@eosterberg](https://github.com/eosterberg))
 
 > see more: [CHANGELOG.md](CHANGELOG.md)
 
@@ -228,6 +188,7 @@ AppRegistry.registerComponent('myproject', () => swiper);
 | style | {...} | `style` | See default style in source. |
 | loadMinimal | false | `bool` | Only load current index slide , `loadMinimalSize` slides before and after. |
 | loadMinimalSize | 1 | `number` | see `loadMinimal`   |
+| loadMinimalLoader | `<ActivityIndicator />` | `element` | Custom loader to display when slides aren't loaded
 
 #### Pagination
 
@@ -238,6 +199,10 @@ AppRegistry.registerComponent('myproject', () => swiper);
 | renderPagination | - | `function` | Complete control how to render pagination with three params (`index`, `total`, `context`) ref to `this.state.index` / `this.state.total` / `this`, For example: show numbers instead of dots. |
 | dot | `<View style={{backgroundColor:'rgba(0,0,0,.2)', width: 8, height: 8,borderRadius: 4, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3,}} />` | `element` | Allow custom the dot element. |
 | activeDot | `<View style={{backgroundColor: '#007aff', width: 8, height: 8, borderRadius: 4, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3,}} />` | `element` | Allow custom the active-dot element. |
+| dotStyle | - | `object` | Allow custom the active-dot element. |
+| dotColor | - | `string` | Allow custom the active-dot element. |
+| activeDotColor | - | `string` | Allow custom the active-dot element. |
+| activeDotStyle | - | `object` | Allow custom the active-dot element. |
 
 #### Autoplay
 
@@ -275,6 +240,7 @@ AppRegistry.registerComponent('myproject', () => swiper);
 | scrollsToTop | false | `bool` | If true, the scroll view scrolls to top when the status bar is tapped.  |
 | removeClippedSubviews | true | `bool` | If true, offscreen child views (whose overflow value is hidden) are removed from their native backing superview when offscreen. This canimprove scrolling performance on long lists.  |
 | automaticallyAdjustContentInsets | false | `bool` | Set to `true` if you need adjust content insets automation. |
+| scrollEnabled | true | `bool` | Enables/Disables swiping |
 
 > @see: http://facebook.github.io/react-native/docs/scrollview.html
 
@@ -341,9 +307,9 @@ $ npm run dev
 $ react-native run-ios
 ```
 
-Then launch simulator for preview, note that, you just need edit the source file `src/index.js`, the change will auto sync to examples.
+Then launch simulator to preview. Note that you just need to edit the source file `src/index.js`, the change will auto sync to examples.
 
-And now this project follow the [standard](https://github.com/feross/standard) code style, you'd better prepare it for IDE.
+And now that this project follows the [standard](https://github.com/feross/standard) code style, you'd better prepare it for IDE.
 
 ## Contribution
 
